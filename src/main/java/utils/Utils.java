@@ -6,7 +6,7 @@ public class Utils {
 	
 	static Logger logger = Logger.getLogger(LoggerClass.class);
 	
-	protected static final void loggerStart() {
+	public static final void loggerStart() {
 		logger.info( "************************************************" );
 		logger.info( "               HTML TO DOC v1.0                 " );
 		logger.info( "@author:	Charalampos Koulaouzidis	          " );
@@ -16,7 +16,7 @@ public class Utils {
 	}
 	
 	
-	protected static final void loggerFin() {
+	public static final void loggerFin() {
 		logger.info( "************************************************" );
 		logger.info( "                  END							  " );
 		logger.info( "************************************************" );
