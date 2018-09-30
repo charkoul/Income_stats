@@ -6,7 +6,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -24,10 +23,12 @@ public class AlphaBankController {
 	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού;";
 	static Logger logger = Logger.getLogger(LoggerClass.class);
 	
-	public void readFilesAlpha(){
+	public List<DataRecord> readFilesAlpha(){
 		
 		File folder = new File(Properties.rootFolder + Properties.alphaFolder);
 		File[] listOfFiles = folder.listFiles();
+		
+		List<DataRecord> dataList = new ArrayList<DataRecord>();
 		try {
 			//read files and check if is csv
 			for (File file : listOfFiles) {
@@ -39,7 +40,7 @@ public class AlphaBankController {
 				    	DataInputStream in= new DataInputStream(fstream);
 						BufferedReader br = new BufferedReader(new InputStreamReader(in));
 						
-						List<DataRecord> dataList = new ArrayList<DataRecord>();
+						
 						boolean startCollectData = false;
 						String strLine;
 						String alphaAccount = "";
@@ -52,11 +53,12 @@ public class AlphaBankController {
 								startCollectData = true;
 							
 							if (!strLine.equals(alphaBankPattern) && startCollectData) {
+								
 								DataRecord record = new DataRecord();
 								String[] element = strLine.split(Properties.semicolon);
-								
+								logger.info("read line :" + strLine );
 								record.setTransactionDate(Utils.stringToDate(element[1], Properties.TYPICAL));
-								record.setTransactionDescription(element[2]);
+								record.setTransactionDescription(cleanDescription(element[2]));
 								record.setTransactionNumber(element[3]);
 								
 								String amount =  Utils.changeDemicalSign(element[6]);
@@ -82,6 +84,16 @@ public class AlphaBankController {
 		}catch(Exception ex){
 			logger.error(ex);
 		}
+		return dataList;
+	}
+	
+	
+	public String cleanDescription(String text) {
+		if (text != null) {
+			text = text.replaceAll("=\"" , "");
+			text = text.replace("\"\"", "");
+		}
+		return text;
 	}
 	
 	

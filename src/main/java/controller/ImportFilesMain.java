@@ -8,10 +8,6 @@ import org.apache.log4j.Logger;
 
 import utils.LoggerClass;
 
-import utils.Utils;
-
-
-
 public class ImportFilesMain {
 	
 	 static Logger logger = Logger.getLogger(LoggerClass.class);
@@ -24,6 +20,7 @@ public class ImportFilesMain {
 			EurobankController eurobankkInstance = new EurobankController();
 			PiraeusBankController piraeusBankInstance = new PiraeusBankController();
 			try {
+				
 				alphaBankInstance.readFilesAlpha();
 			}catch (Exception ex){
 				logger.info("AlphaBankController ERROR :" + ex.getMessage());
