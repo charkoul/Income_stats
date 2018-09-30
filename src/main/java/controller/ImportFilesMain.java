@@ -3,6 +3,9 @@ package controller;
 import controller.AlphaBankController;
 import controller.EurobankController;
 import controller.PiraeusBankController;
+import obj.DataRecord;
+
+import java.util.List;
 
 import org.apache.log4j.Logger;
 
@@ -20,8 +23,7 @@ public class ImportFilesMain {
 			EurobankController eurobankkInstance = new EurobankController();
 			PiraeusBankController piraeusBankInstance = new PiraeusBankController();
 			try {
-				
-				alphaBankInstance.readFilesAlpha();
+				List<DataRecord> aplhaBankList = alphaBankInstance.getAlphaBankData();
 			}catch (Exception ex){
 				logger.info("AlphaBankController ERROR :" + ex.getMessage());
 				logger.info( ex.fillInStackTrace());

@@ -23,24 +23,25 @@ public class AlphaBankController {
 	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού;";
 	static Logger logger = Logger.getLogger(LoggerClass.class);
 	
-	public List<DataRecord> readFilesAlpha(){
+	public List<DataRecord> getAlphaBankData(){
 		
 		File folder = new File(Properties.rootFolder + Properties.alphaFolder);
 		File[] listOfFiles = folder.listFiles();
 		
-		List<DataRecord> dataList = new ArrayList<DataRecord>();
+		//list for all data per file
+		List<DataRecord> alphaBankList = new ArrayList<DataRecord>();
 		try {
 			//read files and check if is csv
 			for (File file : listOfFiles) {
 			    if (file.isFile() && file.getName().contains(Properties.csvExtension)) {
 			    	logger.info(file.getName());
-			    	 
+			    	
 			    	try {
 				    	FileInputStream fstream = new FileInputStream(folder + Properties.backslash + file.getName());
 				    	DataInputStream in= new DataInputStream(fstream);
 						BufferedReader br = new BufferedReader(new InputStreamReader(in));
 						
-						
+						List<DataRecord> dataList = new ArrayList<DataRecord>(); 
 						boolean startCollectData = false;
 						String strLine;
 						String alphaAccount = "";
@@ -72,19 +73,28 @@ public class AlphaBankController {
 								dataList.add(record);
 							}
 						}
+						alphaBankList.addAll(dataList);
 						//Close the input stream
 						in.close();
 					}catch (Exception e){//Catch exception if any
 						logger.error("Error: " + e.getMessage());
 					}
-				}
-			    
+			    }
 			}
-			
+			/*
+			for (int j=0; j<alphaBankList.size() ; j++ ) {
+				logger.info("accountNumber: " + alphaBankList.get(j).getAccountNumber()
+				+ " ,transactionDescription "+ alphaBankList.get(j).getTransactionDescription()
+				+ " ,transactionComment: " + alphaBankList.get(j).getTransactionComment() 
+				+ " ,amount: " + alphaBankList.get(j).getAmount()
+				+ " ,transactionNumber: " + alphaBankList.get(j).getTransactionNumber());
+				
+			}
+			*/
 		}catch(Exception ex){
 			logger.error(ex);
 		}
-		return dataList;
+		return alphaBankList;
 	}
 	
 	

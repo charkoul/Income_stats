@@ -4,7 +4,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import javax.swing.text.rtf.RTFEditorKit;
 
 import org.apache.log4j.Logger;
 
