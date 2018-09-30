@@ -39,7 +39,7 @@ public class AlphaBankController {
 			
 			}
 		}catch(Exception ex){
-			
+			logger.error(ex);
 		}
 		
 	}

@@ -16,8 +16,8 @@ public class ImportFilesMain {
 	
 	 static Logger logger = Logger.getLogger(LoggerClass.class);
 		
-	public  void main( String[] args ){
-		Utils.loggerStart();
+	public static void main( String[] args ){
+		LoggerClass.loggerStart();
 		try {
 			
 			AlphaBankController alphaBankInstance = new AlphaBankController();
@@ -48,7 +48,7 @@ public class ImportFilesMain {
 			
 		}
 
-		Utils.loggerFin();
+		LoggerClass.loggerFin();
 	}
 
 }
