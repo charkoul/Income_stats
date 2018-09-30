@@ -18,7 +18,7 @@ public class AlphaBankController {
 	
 	public void readFilesAlpha(){
 		
-		File folder = new File(Properties.inputFolder);
+		File folder = new File(Properties.rootFolder + Properties.alphaFolder);
 		File[] listOfFiles = folder.listFiles();
 		try {
 			//read files and check the html files
@@ -26,7 +26,7 @@ public class AlphaBankController {
 			    if (file.isFile() && file.getName().contains(Properties.htmlExtension)) {
 			    	logger.info(file.getName());
 			    	 
-			    	String stringFromFile = FileUtils.readFileToString(new File(Properties.inputFolder+file.getName()), "UTF-8");
+			    	String stringFromFile = FileUtils.readFileToString(new File(folder + file.getName()), "UTF-8");
 			       
 			        String unescaped = stringFromFile;
 		        

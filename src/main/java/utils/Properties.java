@@ -2,13 +2,21 @@ package utils;
 
 public class Properties {
 
-	public static final String inputFolder = "C:\\tmp\\";
-	public static final String outputFolder = "C:\\tmp\\outputDocs";
+	//paths
+	public static final String erbFolder = "erb";
+	public static final String alphaFolder = "alphabank";
+	public static final String piraeusFolder = "piraeusbank";
+	public static final String  rootFolder= "C:\\Workspaces\\WebApp\\Income-Stats\\resources\\" ;//"C:\\tmp\\";
 	
-	public static final String  baseURL= "C:\\tmp\\";
 	
+	//Files extensions
 	public static final String htmlExtension = ".html";
 	public static final String docExtension = ".doc";
 	public static final String txtExtension = ".txt";
+	public static final String csvExtension = ".csv";
+	
+	//
+	public static final String  semicolon= ";";
+	
 	
 }
