@@ -53,6 +53,11 @@ public class Utils {
 	
 	}
 	 
+	 /**
+	  * Change "," from demical(String) to "."
+	  * @param dem : demical number
+	  * @return
+	  */
 	 public static String changeDemicalSign (String dem) {
 		 return dem.replace(",", ".");
 		 

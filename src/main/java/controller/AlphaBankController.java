@@ -39,7 +39,7 @@ public class AlphaBankController {
 			    	try {
 				    	FileInputStream fstream = new FileInputStream(folder + Properties.backslash + file.getName());
 				    	DataInputStream in= new DataInputStream(fstream);
-						BufferedReader br = new BufferedReader(new InputStreamReader(in));
+						BufferedReader br = new BufferedReader(new InputStreamReader(in , "UTF-8"));
 						
 						List<DataRecord> dataList = new ArrayList<DataRecord>(); 
 						boolean startCollectData = false;

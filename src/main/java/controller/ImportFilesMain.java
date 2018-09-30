@@ -29,7 +29,7 @@ public class ImportFilesMain {
 				logger.info( ex.fillInStackTrace());
 			}
 			try {
-				eurobankkInstance.readsFileERB();	
+				List<DataRecord> euroBankList = eurobankkInstance.getERBData();	
 			}catch (Exception ex){
 				logger.info("EurobankController ERROR :" +ex.getMessage());
 				logger.info( ex.fillInStackTrace());
