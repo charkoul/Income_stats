@@ -34,7 +34,7 @@ public class AlphaBankController {
 			//read files and check if is csv
 			for (File file : listOfFiles) {
 			    if (file.isFile() && file.getName().contains(Properties.csvExtension)) {
-			    	logger.info(file.getName());
+			    	logger.info("Read AlphaBank's transactrion file: " + file.getName());
 			    	
 			    	try {
 				    	FileInputStream fstream = new FileInputStream(folder + Properties.backslash + file.getName());
@@ -57,7 +57,7 @@ public class AlphaBankController {
 								
 								DataRecord record = new DataRecord();
 								String[] element = strLine.split(Properties.semicolon);
-								logger.info("read line :" + strLine );
+								//logger.info("read line :" + strLine );
 								record.setTransactionDate(Utils.stringToDate(element[1], Properties.TYPICAL));
 								record.setTransactionDescription(cleanDescription(element[2]));
 								record.setTransactionNumber(element[3]);
@@ -81,16 +81,8 @@ public class AlphaBankController {
 					}
 			    }
 			}
-			/*
-			for (int j=0; j<alphaBankList.size() ; j++ ) {
-				logger.info("accountNumber: " + alphaBankList.get(j).getAccountNumber()
-				+ " ,transactionDescription "+ alphaBankList.get(j).getTransactionDescription()
-				+ " ,transactionComment: " + alphaBankList.get(j).getTransactionComment() 
-				+ " ,amount: " + alphaBankList.get(j).getAmount()
-				+ " ,transactionNumber: " + alphaBankList.get(j).getTransactionNumber());
-				
-			}
-			*/
+			//for debug
+			//Utils.printDataRecordList(alphaBankList);
 		}catch(Exception ex){
 			logger.error(ex);
 		}

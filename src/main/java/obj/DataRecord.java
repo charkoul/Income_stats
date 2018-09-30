@@ -68,22 +68,7 @@ public class DataRecord {
 	}
 	
 	
-	public void printDataRecord() {
-		Logger logger = Logger.getLogger(LoggerClass.class);
-		logger.info("accountNumber: " + this.getAccountNumber()
-					+ " ,transactionDescription "+ this.getTransactionDescription()
-					+ " ,transactionComment: " + this.getTransactionComment() 
-					+ " ,amount: " + this.getAmount()
-					+ " ,transactionNumber: " + this.getTransactionNumber());
-	}
 	
-	
-	public void printDataRecordList(List<DataRecord> dataList) {
-		for (int i=0 ; i<dataList.size(); i++) {
-			printDataRecord();
-		}
-		
-	}
 	
 	
 

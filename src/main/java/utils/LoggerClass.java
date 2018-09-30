@@ -7,7 +7,7 @@ public class LoggerClass {
 	 
 	 public static final void loggerStart() {
 			logger.info( "************************************************" );
-			logger.info( "               HTML TO DOC v1.0                 " );
+			logger.info( "        INCOME IMPORT FILE v1.0                 " );
 			logger.info( "@author:	Charalampos Koulaouzidis	          " );
 			logger.info( "@email:	ch.koulaouzidis@gmail.com	          " );
 			logger.info( "************************************************" );
