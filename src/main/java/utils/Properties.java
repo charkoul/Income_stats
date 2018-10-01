@@ -30,4 +30,8 @@ public class Properties {
 	public static String TYPICAL = "dd/MM/yyyy";
 	
 	
+	//encoding
+	public static String UTF8 = "UTF-8";
+	public static String ANSI = "Cp1252";
+	
 }

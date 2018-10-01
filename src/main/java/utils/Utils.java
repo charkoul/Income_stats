@@ -1,5 +1,13 @@
 package utils;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -59,6 +67,9 @@ public class Utils {
 	  * @return
 	  */
 	 public static String changeDemicalSign (String dem) {
+		 if (dem.contains("."))
+			 dem = dem.replace(".", "");
+		 
 		 return dem.replace(",", ".");
 		 
 	 }
@@ -80,9 +91,64 @@ public class Utils {
 			}
 			
 		}
+		
+		
+		
+		
+		/**
+		 * change encoding from file
+		 * @param source file
+		 * @param srcEncoding : source file encoding
+		 * @param target file
+		 * @param tgtEncoding : target file encoding
+		 * @throws IOException
+		 */
+		public static void transform(File source, String srcEncoding, String tgtEncoding) throws IOException {
+		    BufferedReader br = null;
+		    BufferedWriter bw = null;
+		    try{
+		    	//get source file path
+		    	String path = getPathOfFile(source);
+		    	File target = new File(path +"new_"+ source.getName());
+		        br = new BufferedReader(new InputStreamReader(new FileInputStream(source),srcEncoding));
+		        bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(target), tgtEncoding));
+		        char[] buffer = new char[16384];
+		        int read;
+		        while ((read = br.read(buffer)) != -1)
+		            bw.write(buffer, 0, read);
+		        
+		        source.delete();
+		    } finally {
+		        try {
+		            if (br != null)
+		                br.close();
+		        } finally {
+		            if (bw != null)
+		                bw.close();
+		        }
+		    }
+		}
 	    
+		
+		
+		/**
+		 * Return path from a given file
+		 * @param filename
+		 * @return
+		 */
+		public static String getPathOfFile(File filename) {
+			String absolutePath = filename.getAbsolutePath();
+			String filePath = absolutePath.substring(0,absolutePath.lastIndexOf(File.separator));
+			return filePath+"\\";
+		}
 	   
 	   
+		
+		public static void setBankToDataList(List<DataRecord> listRecords , int bankId) {
+			for (int i=0 ; i<listRecords.size() ; i++) {
+				listRecords.get(i).setBank(bankId);
+			}
+		}
 	  
 	 
 	    

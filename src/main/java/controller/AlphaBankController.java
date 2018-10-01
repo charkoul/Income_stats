@@ -36,10 +36,14 @@ public class AlphaBankController {
 			    if (file.isFile() && file.getName().contains(Properties.csvExtension)) {
 			    	logger.info("Read AlphaBank's transactrion file: " + file.getName());
 			    	
+			    	
+			    	
+			    	
+			    	
 			    	try {
 				    	FileInputStream fstream = new FileInputStream(folder + Properties.backslash + file.getName());
 				    	DataInputStream in= new DataInputStream(fstream);
-						BufferedReader br = new BufferedReader(new InputStreamReader(in , "UTF-8"));
+						BufferedReader br = new BufferedReader(new InputStreamReader(in , Properties.UTF8));
 						
 						List<DataRecord> dataList = new ArrayList<DataRecord>(); 
 						boolean startCollectData = false;

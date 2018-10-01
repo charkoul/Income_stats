@@ -15,9 +15,12 @@ public class DataRecord {
 	private double amount;
 	private String accountNumber;
 	private String transactionNumber;
+	private int bank;
 	
 	
 	
+	
+
 	public DataRecord() {
 		super();
 	}
@@ -49,7 +52,6 @@ public class DataRecord {
 	}
 
 
-
 	public String getAccountNumber() {
 		return accountNumber;
 	}
@@ -62,12 +64,19 @@ public class DataRecord {
 		return transactionNumber;
 	}
 
-
 	public void setTransactionNumber(String transactionNumber) {
 		this.transactionNumber = transactionNumber;
 	}
 	
-	
+	public int getBank() {
+		return bank;
+	}
+
+
+	public void setBank(int bank) {
+		this.bank = bank;
+	}
+
 	
 	
 	
