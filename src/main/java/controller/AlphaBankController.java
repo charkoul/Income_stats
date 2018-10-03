@@ -35,11 +35,6 @@ public class AlphaBankController {
 			for (File file : listOfFiles) {
 			    if (file.isFile() && file.getName().contains(Properties.csvExtension)) {
 			    	logger.info("Read AlphaBank's transactrion file: " + file.getName());
-			    	
-			    	
-			    	
-			    	
-			    	
 			    	try {
 				    	FileInputStream fstream = new FileInputStream(folder + Properties.backslash + file.getName());
 				    	DataInputStream in= new DataInputStream(fstream);

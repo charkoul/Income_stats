@@ -33,12 +33,8 @@ public class EurobankController {
 			for (File file : listOfFiles) {
 			    if (file.isFile() && file.getName().contains(Properties.csvExtension)) {
 			    	logger.info("Read Eurobank's transactrion file: " + file.getName());
-			    	
-			    	
 			    	//TODO:: fix file to automatically convert to UTF8 from ANSI
 			    	//Utils.transform(file , Properties.ANSI,Properties.UTF8);
-			    	
-			    	
 			    	try {
 				    	FileInputStream fstream = new FileInputStream(folder + Properties.backslash + file.getName() );
 				    	DataInputStream in= new DataInputStream(fstream);
@@ -67,20 +63,18 @@ public class EurobankController {
 								
 								DataRecord record = new DataRecord();
 								String[] element = strLine.split(Properties.semicolon);
-								logger.info("read line :" + strLine );
+								//logger.info("read line :" + strLine );
 								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL));
 								record.setTransactionDescription(element[2]);
 								record.setAmount(Double.parseDouble(Utils.changeDemicalSign(element[3])));
 								dataList.add(record);
 							}
-						
-							
-							
 						}
+						//add the erb account----bug
+						addErbAccountToList(dataList ,erbAccount );
 						erbBankList.addAll(dataList);
 						
-						//add the erb account----bug
-						addErbAccountToList(erbBankList ,erbAccount );
+						
 						//Close the input stream
 						in.close();
 					}catch (Exception e){//Catch exception if any
@@ -89,7 +83,7 @@ public class EurobankController {
 			    }
 			}
 			//for debug
-			Utils.printDataRecordList(erbBankList);
+			//Utils.printDataRecordList(erbBankList);
 		}catch(Exception ex){
 			logger.error(ex);
 		}
