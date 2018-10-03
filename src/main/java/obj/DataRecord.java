@@ -21,11 +21,15 @@ public class DataRecord {
 	
 	
 
+	public DataRecord(int bank) {
+		super();
+		this.bank = bank;
+	}
+
 	public DataRecord() {
 		super();
 	}
 	
-		
 	public Date getTransactionDate() {
 		return transactionDate;
 	}
@@ -51,7 +55,6 @@ public class DataRecord {
 		this.amount = amount;
 	}
 
-
 	public String getAccountNumber() {
 		return accountNumber;
 	}
@@ -72,13 +75,8 @@ public class DataRecord {
 		return bank;
 	}
 
-
 	public void setBank(int bank) {
 		this.bank = bank;
 	}
 
-	
-	
-	
-
-}
+	}

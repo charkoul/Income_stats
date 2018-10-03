@@ -54,7 +54,7 @@ public class AlphaBankController {
 							
 							if (!strLine.equals(alphaBankPattern) && startCollectData) {
 								
-								DataRecord record = new DataRecord();
+								DataRecord record = new DataRecord(2);
 								String[] element = strLine.split(Properties.semicolon);
 								//logger.info("read line :" + strLine );
 								record.setTransactionDate(Utils.stringToDate(element[1], Properties.TYPICAL));

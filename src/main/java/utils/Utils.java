@@ -15,6 +15,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
+import obj.Banks;
 import obj.DataRecord;
 
 
@@ -77,20 +78,20 @@ public class Utils {
 	 
 	 public static void printDataRecord(DataRecord record) {
 			
-			logger.info("accountNumber: " + record.getAccountNumber()
-						+ " ,transactionDescription "+ record.getTransactionDescription()
-						+ " ,transactionComment: " + record.getTransactionComment() 
-						+ " ,amount: " + record.getAmount()
-						+ " ,transactionNumber: " + record.getTransactionNumber());
-		}
+		logger.info("accountNumber: " + record.getAccountNumber()
+					+ " ,transactionDescription "+ record.getTransactionDescription()
+					+ " ,transactionComment: " + record.getTransactionComment() 
+					+ " ,amount: " + record.getAmount()
+					+ " ,transactionNumber: " + record.getTransactionNumber()
+					+ " ,bankID: " + record.getBank());
+	}
 		
 		
-		public static void printDataRecordList(List<DataRecord> dataList) {
-			for (int i=0 ; i<dataList.size(); i++) {
-				printDataRecord(dataList.get(i));
-			}
-			
+	public static void printDataRecordList(List<DataRecord> dataList) {
+		for (int i=0 ; i<dataList.size(); i++) {
+			printDataRecord(dataList.get(i));
 		}
+	}
 		
 		
 		

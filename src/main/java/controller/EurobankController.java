@@ -61,7 +61,7 @@ public class EurobankController {
 							
 							if (!strLine.equals(eurobankPattern) && startCollectData && !stopRead) {
 								
-								DataRecord record = new DataRecord();
+								DataRecord record = new DataRecord(1);
 								String[] element = strLine.split(Properties.semicolon);
 								//logger.info("read line :" + strLine );
 								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL));
