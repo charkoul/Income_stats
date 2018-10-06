@@ -21,9 +21,9 @@ public class AlphaBankController {
 	
 	
 	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού;";
-	static Logger logger = Logger.getLogger(LoggerClass.class);
+	static Logger logger = Logger.getLogger(AlphaBankController.class);
 	
-	public List<DataRecord> getAlphaBankData(){
+	public List<DataRecord> getAlphaBankData() throws Exception{
 		
 		File folder = new File(Properties.rootFolder + Properties.alphaFolder);
 		File[] listOfFiles = folder.listFiles();
@@ -82,8 +82,10 @@ public class AlphaBankController {
 			}
 			//for debug
 			//Utils.printDataRecordList(alphaBankList);
+			
 		}catch(Exception ex){
 			logger.error(ex);
+			
 		}
 		return alphaBankList;
 	}

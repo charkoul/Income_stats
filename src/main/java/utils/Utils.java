@@ -22,7 +22,7 @@ import obj.DataRecord;
 
 public class Utils {
 	
-	static Logger logger = Logger.getLogger(LoggerClass.class);
+	static Logger logger = Logger.getLogger(Utils.class);
 	
 	 
 	  /**

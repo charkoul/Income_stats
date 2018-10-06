@@ -13,7 +13,7 @@ import utils.LoggerClass;
 
 public class ImportFilesMain {
 	
-	 static Logger logger = Logger.getLogger(LoggerClass.class);
+	static Logger logger = Logger.getLogger(ImportFilesMain.class);
 		
 	public static void main( String[] args ){
 		LoggerClass.loggerStart();

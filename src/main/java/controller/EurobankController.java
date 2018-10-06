@@ -19,7 +19,7 @@ public class EurobankController {
  
 	public static String eurobankPattern = "Ημερομηνία Κίνησης;Ημερομηνία Αξίας;Περιγραφή;Ποσό;Υπόλοιπο";
 	public static String accountNumberPattern = ";;Αριθμός Λογαριασμού:";
-	static Logger logger = Logger.getLogger(LoggerClass.class);
+	static Logger logger = Logger.getLogger(EurobankController.class);
 	
 	public List<DataRecord> getERBData(){
 		
@@ -85,7 +85,7 @@ public class EurobankController {
 			//for debug
 			//Utils.printDataRecordList(erbBankList);
 		}catch(Exception ex){
-			logger.error(ex);
+			logger.error(ex.getMessage());
 		}
 		return erbBankList;
 	}
