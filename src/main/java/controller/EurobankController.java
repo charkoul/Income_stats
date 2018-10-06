@@ -32,7 +32,7 @@ public class EurobankController {
 			//read files and check if is csv
 			for (File file : listOfFiles) {
 			    if (file.isFile() && file.getName().contains(Properties.csvExtension)) {
-			    	logger.info("Read Eurobank's transactrion file: " + file.getName());
+			    	logger.info("Read Eurobank's transaction file: " + file.getName());
 			    	//TODO:: fix file to automatically convert to UTF8 from ANSI
 			    	//Utils.transform(file , Properties.ANSI,Properties.UTF8);
 			    	try {

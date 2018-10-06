@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.StringJoiner;
+
 public class Properties {
 
 	//paths
@@ -16,9 +18,11 @@ public class Properties {
 	public static final String csvExtension = ".csv";
 	
 	//
-	public static final String  semicolon = ";";
-	public static final String  backslash = "\\";
-	public static final String 	colon = ":";
+	public static final String semicolon = ";";
+	public static final String backslash = "\\";
+	public static final String slash = "//";
+	public static final String colon = ":";
+	public static final String tab = "\t";
 	
 	//keywords
 	public static String LEFT = "left";

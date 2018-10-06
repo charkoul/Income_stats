@@ -33,7 +33,7 @@ public class ImportFilesMain {
 				logger.error("Eurobank files did not import due to Exception :", ex);
 			}
 			try {
-				piraeusBankInstance.readFilesPiraeus();
+				List<DataRecord> piraeusBankList = piraeusBankInstance.getPiraeusBankData();
 			}catch (Exception ex){
 				logger.error("PiraeusBank files did not import due to Exception :", ex);
 				

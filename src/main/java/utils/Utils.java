@@ -38,7 +38,7 @@ public class Utils {
 			 else if ((trimFrom.equals(Properties.RIGHT)))
 				 text = text.split(split)[0];
 		  }
-		  return text;
+		  return text.trim();
 	}
 	
 	
