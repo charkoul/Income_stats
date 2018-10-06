@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.omg.IOP.ExceptionDetailMessage;
 
 import obj.DataRecord;
 import utils.LoggerClass;
@@ -23,7 +24,7 @@ public class AlphaBankController {
 	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού;";
 	static Logger logger = Logger.getLogger(AlphaBankController.class);
 	
-	public List<DataRecord> getAlphaBankData() throws Exception{
+	public List<DataRecord> getAlphaBankData() throws Exception {
 		
 		File folder = new File(Properties.rootFolder + Properties.alphaFolder);
 		File[] listOfFiles = folder.listFiles();
@@ -76,7 +77,7 @@ public class AlphaBankController {
 						//Close the input stream
 						in.close();
 					}catch (Exception e){//Catch exception if any
-						logger.error("Error: " + e.getMessage());
+						logger.error("AlphaBankControllerException::", e);
 					}
 			    }
 			}
@@ -84,7 +85,8 @@ public class AlphaBankController {
 			//Utils.printDataRecordList(alphaBankList);
 			
 		}catch(Exception ex){
-			logger.error(ex);
+			logger.error("AlphaBankControllerException::", ex);
+			
 			
 		}
 		return alphaBankList;

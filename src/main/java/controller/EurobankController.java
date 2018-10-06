@@ -78,14 +78,14 @@ public class EurobankController {
 						//Close the input stream
 						in.close();
 					}catch (Exception e){//Catch exception if any
-						logger.error("Error: " + e.getMessage());
+						logger.error("EurobankControllerException::",e);
 					}
 			    }
 			}
 			//for debug
 			//Utils.printDataRecordList(erbBankList);
 		}catch(Exception ex){
-			logger.error(ex.getMessage());
+			logger.error("EurobankControllerException::", ex);
 		}
 		return erbBankList;
 	}

@@ -139,3 +139,66 @@
 2018-10-06 22:41:31 INFO  LoggerClass:19 - ************************************************
 2018-10-06 22:41:31 INFO  LoggerClass:20 -                   END							  
 2018-10-06 22:41:31 INFO  LoggerClass:21 - ************************************************
+2018-10-06 23:01:53 INFO  LoggerClass:9 - ************************************************
+2018-10-06 23:01:53 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-06 23:01:53 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-06 23:01:53 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-06 23:01:53 INFO  LoggerClass:13 - ************************************************
+2018-10-06 23:05:33 ERROR AlphaBankController:88 - 
+2018-10-06 23:06:00 ERROR AlphaBankController:88 - java.lang.NullPointerException
+2018-10-06 23:06:05 ERROR EurobankController:88 - 
+2018-10-06 23:06:15 INFO  LoggerClass:19 - ************************************************
+2018-10-06 23:06:15 INFO  LoggerClass:20 -                   END							  
+2018-10-06 23:06:15 INFO  LoggerClass:21 - ************************************************
+2018-10-06 23:09:10 INFO  LoggerClass:9 - ************************************************
+2018-10-06 23:09:10 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-06 23:09:10 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-06 23:09:10 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-06 23:09:10 INFO  LoggerClass:13 - ************************************************
+2018-10-06 23:09:10 ERROR AlphaBankController:88 - java.lang.NullPointerException
+2018-10-06 23:09:10 ERROR EurobankController:88 - 
+2018-10-06 23:09:10 INFO  LoggerClass:19 - ************************************************
+2018-10-06 23:09:10 INFO  LoggerClass:20 -                   END							  
+2018-10-06 23:09:10 INFO  LoggerClass:21 - ************************************************
+2018-10-06 23:13:54 INFO  LoggerClass:9 - ************************************************
+2018-10-06 23:13:54 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-06 23:13:54 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-06 23:13:54 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-06 23:13:54 INFO  LoggerClass:13 - ************************************************
+2018-10-06 23:13:54 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-06 23:13:54 ERROR EurobankController:88 - 
+2018-10-06 23:13:54 INFO  LoggerClass:19 - ************************************************
+2018-10-06 23:13:54 INFO  LoggerClass:20 -                   END							  
+2018-10-06 23:13:54 INFO  LoggerClass:21 - ************************************************
+2018-10-06 23:17:16 INFO  LoggerClass:9 - ************************************************
+2018-10-06 23:17:16 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-06 23:17:16 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-06 23:17:16 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-06 23:17:16 INFO  LoggerClass:13 - ************************************************
+2018-10-06 23:17:16 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-06 23:17:16 ERROR EurobankController:88 - 
+2018-10-06 23:17:16 INFO  LoggerClass:19 - ************************************************
+2018-10-06 23:17:16 INFO  LoggerClass:20 -                   END							  
+2018-10-06 23:17:16 INFO  LoggerClass:21 - ************************************************
+2018-10-06 23:19:01 INFO  LoggerClass:9 - ************************************************
+2018-10-06 23:19:01 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-06 23:19:01 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-06 23:19:01 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-06 23:19:01 INFO  LoggerClass:13 - ************************************************
+2018-10-06 23:19:01 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-06 23:19:01 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-06 23:19:01 INFO  LoggerClass:19 - ************************************************
+2018-10-06 23:19:01 INFO  LoggerClass:20 -                   END							  
+2018-10-06 23:19:01 INFO  LoggerClass:21 - ************************************************

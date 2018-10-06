@@ -25,25 +25,23 @@ public class ImportFilesMain {
 			try {
 				List<DataRecord> aplhaBankList = alphaBankInstance.getAlphaBankData();
 			}catch (Exception ex){
-				logger.info("AlphaBankController ERROR :" + ex.getMessage());
-				logger.info( ex.fillInStackTrace());
+				logger.error("AlphaBank files did not import due to Exception :" , ex);
 			}
 			try {
 				List<DataRecord> euroBankList = eurobankkInstance.getERBData();	
 			}catch (Exception ex){
-				logger.info("EurobankController ERROR :" +ex.getMessage());
-				logger.info( ex.fillInStackTrace());
+				logger.error("Eurobank files did not import due to Exception :", ex);
 			}
 			try {
 				piraeusBankInstance.readFilesPiraeus();
 			}catch (Exception ex){
-				logger.info("PiraeusBankController ERROR :" +ex.getMessage());
-				logger.info( ex.fillInStackTrace());
+				logger.error("PiraeusBank files did not import due to Exception :", ex);
+				
 			}
 		
 		}catch (Exception ex) {
-			logger.info(ex.getMessage());
-			logger.info( ex.fillInStackTrace());
+			logger.error(ex);
+			
 			
 		}
 
