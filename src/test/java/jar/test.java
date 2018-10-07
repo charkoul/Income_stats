@@ -1,5 +1,8 @@
 package jar;
 
+import utils.Properties;
+import utils.Utils;
+
 public class test {
 
 	public static void main( String[] args ) {
@@ -13,6 +16,10 @@ public class test {
 		System.out.println("no_trim_text:" + no_trim_text + ".");
 		System.out.println("trimed:" + trimed +".");
 		
+		
+		String  str2 ="6843124428393  μπενζινα / EB18091086193266";
+		System.out.println(Utils.trimText(str2, Properties.slash, Properties.LEFT));
+		System.out.println(Utils.trimText(str2, Properties.slash, Properties.RIGHT));
 		
 		try {
 			utils.Utils.stringToDate("30/9/2018" , "dd/MM/yyyy");

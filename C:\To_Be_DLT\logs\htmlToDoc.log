@@ -202,3 +202,298 @@ java.lang.NullPointerException
 2018-10-06 23:19:01 INFO  LoggerClass:19 - ************************************************
 2018-10-06 23:19:01 INFO  LoggerClass:20 -                   END							  
 2018-10-06 23:19:01 INFO  LoggerClass:21 - ************************************************
+2018-10-07 19:18:16 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:18:16 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:18:16 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:18:16 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:18:16 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:18:16 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:18:16 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:18:16 ERROR PiraeusBankController:77 - PiraeusBankController::
+java.lang.NullPointerException
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:32)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 19:18:16 INFO  LoggerClass:19 - ************************************************
+2018-10-07 19:18:16 INFO  LoggerClass:20 -                   END							  
+2018-10-07 19:18:16 INFO  LoggerClass:21 - ************************************************
+2018-10-07 19:18:30 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:18:30 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:18:30 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:18:30 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:18:30 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:18:30 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:18:30 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:19:18 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 19:21:30 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:21:30 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:21:30 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:21:30 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:21:30 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:21:30 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:21:30 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:21:37 INFO  LoggerClass:19 - ************************************************
+2018-10-07 19:21:37 INFO  LoggerClass:20 -                   END							  
+2018-10-07 19:21:37 INFO  LoggerClass:21 - ************************************************
+2018-10-07 19:22:13 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:22:13 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:22:13 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:22:13 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:22:13 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:22:13 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:22:13 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:22:26 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:22:26 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:22:26 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:22:26 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:22:26 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:22:26 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:22:26 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:22:26 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 19:22:26 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at utils.Utils.trimText(Utils.java:37)
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:61)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 19:22:26 INFO  LoggerClass:19 - ************************************************
+2018-10-07 19:22:26 INFO  LoggerClass:20 -                   END							  
+2018-10-07 19:22:26 INFO  LoggerClass:21 - ************************************************
+2018-10-07 19:22:39 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:22:39 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:22:39 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:22:39 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:22:39 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:22:39 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:22:39 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:22:45 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 19:25:50 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 19:26:48 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 19:27:35 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at utils.Utils.trimText(Utils.java:37)
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:61)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 19:27:48 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:27:48 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:27:49 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:27:49 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:27:49 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:27:49 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:27:49 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:27:52 INFO  LoggerClass:19 - ************************************************
+2018-10-07 19:27:52 INFO  LoggerClass:20 -                   END							  
+2018-10-07 19:27:52 INFO  LoggerClass:21 - ************************************************
+2018-10-07 19:28:01 INFO  LoggerClass:9 - ************************************************
+2018-10-07 19:28:01 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 19:28:01 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 19:28:01 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 19:28:01 INFO  LoggerClass:13 - ************************************************
+2018-10-07 19:28:01 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 19:28:01 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 19:28:05 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 19:58:01 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.ArrayIndexOutOfBoundsException: 1
+	at utils.Utils.trimText(Utils.java:37)
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:61)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 19:58:02 INFO  LoggerClass:19 - ************************************************
+2018-10-07 19:58:02 INFO  LoggerClass:20 -                   END							  
+2018-10-07 19:58:02 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:02:48 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:02:48 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:02:48 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:02:48 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:02:48 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:02:48 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:02:48 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:02:48 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:02:48 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.NumberFormatException: For input string: "-80.00 EUR"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:62)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 20:02:48 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:02:48 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:02:48 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:06:54 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:06:54 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:06:54 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:06:54 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:06:54 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:06:54 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:06:54 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:06:54 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:06:54 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.NumberFormatException: For input string: "-80.00 EUR"
+	at sun.misc.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2043)
+	at sun.misc.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.lang.Double.parseDouble(Double.java:538)
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:62)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 20:06:54 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:06:54 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:06:54 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:08:04 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:08:04 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:08:04 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:08:04 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:08:04 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:08:04 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:08:04 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:08:04 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:08:04 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:58)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 20:08:04 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:08:04 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:08:04 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:08:48 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:08:48 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:08:48 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:08:48 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:08:48 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:08:48 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:08:48 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:08:53 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:08:54 ERROR PiraeusBankController:72 - PiraeusBankController::
+java.lang.ArrayIndexOutOfBoundsException: 0
+	at controller.PiraeusBankController.getPiraeusBankData(PiraeusBankController.java:58)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:36)
+2018-10-07 20:08:57 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:08:57 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:08:57 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:09:02 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:09:02 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:09:02 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:09:02 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:09:02 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:09:02 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:09:02 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:09:07 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:10:40 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:10:40 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΜΕΤΑΦΟΡΑ ΣΕ ΛΟΓΑΡΙΑΣΜΟ         ,transactionComment: 6843124428393  μπενζινα ,amount: -80.0 ,transactionNumber: EB18091086193266 ,bankID: 3
+2018-10-07 20:10:40 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΑΤΜ-ΑΝΑΛΗΨΗ ΜΕΤΡΗΤΩΝ           ,transactionComment: S1B16701 ΚΑΤ. ΑΝΑΒΥΣΣΟΥ  0000444018  4305895180265008 12770030 ,amount: -20.0 ,transactionNumber: AT18229084767852 ,bankID: 3
+2018-10-07 20:10:40 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΜΕΤΑΦΟΡΑ ΑΠΟ ΛΟΓΑΡΙΑΣΜΟ        ,transactionComment: 6843124428393 ,amount: 225.0 ,transactionNumber: EB18073070600809 ,bankID: 3
+2018-10-07 20:10:41 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:10:41 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:10:41 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:10:44 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:10:44 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:10:44 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:10:44 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:10:44 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:10:44 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:10:44 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:10:44 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:10:44 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΜΕΤΑΦΟΡΑ ΣΕ ΛΟΓΑΡΙΑΣΜΟ         ,transactionComment: 6843124428393  μπενζινα ,amount: -80.0 ,transactionNumber: EB18091086193266 ,bankID: 3
+2018-10-07 20:10:44 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΑΤΜ-ΑΝΑΛΗΨΗ ΜΕΤΡΗΤΩΝ           ,transactionComment: S1B16701 ΚΑΤ. ΑΝΑΒΥΣΣΟΥ  0000444018  4305895180265008 12770030 ,amount: -20.0 ,transactionNumber: AT18229084767852 ,bankID: 3
+2018-10-07 20:10:44 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΜΕΤΑΦΟΡΑ ΑΠΟ ΛΟΓΑΡΙΑΣΜΟ        ,transactionComment: 6843124428393 ,amount: 225.0 ,transactionNumber: EB18073070600809 ,bankID: 3
+2018-10-07 20:10:44 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:10:44 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:10:44 INFO  LoggerClass:21 - ************************************************
+2018-10-07 20:12:02 INFO  LoggerClass:9 - ************************************************
+2018-10-07 20:12:02 INFO  LoggerClass:10 -         INCOME IMPORT FILE v1.0                 
+2018-10-07 20:12:02 INFO  LoggerClass:11 - @author:	Charalampos Koulaouzidis	          
+2018-10-07 20:12:02 INFO  LoggerClass:12 - @email:	ch.koulaouzidis@gmail.com	          
+2018-10-07 20:12:02 INFO  LoggerClass:13 - ************************************************
+2018-10-07 20:12:02 ERROR AlphaBankController:88 - AlphaBankControllerException::
+java.lang.NullPointerException
+	at controller.AlphaBankController.getAlphaBankData(AlphaBankController.java:36)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:26)
+2018-10-07 20:12:02 ERROR EurobankController:88 - EurobankControllerException::
+java.lang.NullPointerException
+	at controller.EurobankController.getERBData(EurobankController.java:33)
+	at controller.ImportFilesMain.main(ImportFilesMain.java:31)
+2018-10-07 20:12:02 INFO  PiraeusBankController:34 - Read PiraeusBank's transaction file: pir.txt
+2018-10-07 20:12:02 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΜΕΤΑΦΟΡΑ ΣΕ ΛΟΓΑΡΙΑΣΜΟ ,transactionComment: 6843124428393  μπενζινα ,amount: -80.0 ,transactionNumber: EB18091086193266 ,bankID: 3
+2018-10-07 20:12:02 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΑΤΜ-ΑΝΑΛΗΨΗ ΜΕΤΡΗΤΩΝ ,transactionComment: S1B16701 ΚΑΤ. ΑΝΑΒΥΣΣΟΥ  0000444018  4305895180265008 12770030 ,amount: -20.0 ,transactionNumber: AT18229084767852 ,bankID: 3
+2018-10-07 20:12:02 INFO  Utils:81 - accountNumber: GR69 0171 5520 0065 5213 6219 744 ,transactionDescription ΜΕΤΑΦΟΡΑ ΑΠΟ ΛΟΓΑΡΙΑΣΜΟ ,transactionComment: 6843124428393 ,amount: 225.0 ,transactionNumber: EB18073070600809 ,bankID: 3
+2018-10-07 20:12:02 INFO  LoggerClass:19 - ************************************************
+2018-10-07 20:12:02 INFO  LoggerClass:20 -                   END							  
+2018-10-07 20:12:02 INFO  LoggerClass:21 - ************************************************

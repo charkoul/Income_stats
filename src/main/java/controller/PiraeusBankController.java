@@ -51,18 +51,18 @@ public class PiraeusBankController {
 							if (strLine.equals(piraeusBankPattern))
 								startCollectData = true;
 							
-							if (startCollectData && !"".equals(strLine)) {
+							if (startCollectData && !Properties.tab.equals(strLine) && !strLine.equals(piraeusBankPattern)) {
 								DataRecord record = new DataRecord(3);
 								String[] element = strLine.split(Properties.tab);
 								record.setAccountNumber(piraeusAccountNum);
 								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL));
-								record.setTransactionDescription(element[2]);
+								record.setTransactionDescription(element[2].trim());
 								record.setTransactionComment(Utils.trimText(element[3], Properties.slash, Properties.RIGHT));
 								record.setTransactionNumber(Utils.trimText(element[3], Properties.slash, Properties.LEFT));
-								record.setAmount(Double.parseDouble(Utils.changeDemicalSign(element[4])));
+								record.setAmount(Double.parseDouble(Utils.changeDemicalSign(removeCurrencyFromText(Properties.EURO,element[4]))));
 								dataList.add(record);
-								
-							}else {
+							}
+							if (startCollectData && Properties.tab.equals(strLine)) {
 								stopProcess=true;
 							}
 						}
@@ -73,9 +73,19 @@ public class PiraeusBankController {
 			    	}
 				}
 			}
+			//for debug
+			Utils.printDataRecordList(piraeusBankList);
 		}catch (Exception e) {
 			logger.error("PiraeusBankController::", e);
 		}
 		return piraeusBankList;
 	}
+	
+	
+	public static String removeCurrencyFromText(String currency, String fullText ) {
+		fullText = fullText.replace(currency, "");
+		return fullText.trim();
+	}
+	
+	
 }

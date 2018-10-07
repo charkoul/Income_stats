@@ -10,7 +10,6 @@ public class Properties {
 	public static final String piraeusFolder = "piraeusbank\\";
 	public static final String  rootFolder= "C:\\Workspaces\\WebApp\\Income-Stats\\resources\\" ;//"C:\\tmp\\";
 	
-	
 	//Files extensions
 	public static final String htmlExtension = ".html";
 	public static final String docExtension = ".doc";
@@ -20,7 +19,7 @@ public class Properties {
 	//
 	public static final String semicolon = ";";
 	public static final String backslash = "\\";
-	public static final String slash = "//";
+	public static final String slash = "/";
 	public static final String colon = ":";
 	public static final String tab = "\t";
 	
@@ -37,5 +36,10 @@ public class Properties {
 	//encoding
 	public static String UTF8 = "UTF-8";
 	public static String ANSI = "Cp1252";
+	
+	
+	//currency
+	public static String EURO = "EUR";
+	
 	
 }
