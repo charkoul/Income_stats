@@ -1,5 +1,6 @@
 package jar;
 
+import controller.DbController;
 import utils.Properties;
 import utils.Utils;
 
@@ -21,10 +22,14 @@ public class test {
 		System.out.println(Utils.trimText(str2, Properties.slash, Properties.LEFT));
 		System.out.println(Utils.trimText(str2, Properties.slash, Properties.RIGHT));
 		
+		
+		
+		
 		try {
 			utils.Utils.stringToDate("30/9/2018" , "dd/MM/yyyy");
+			//DbController.insertRecordIntoTable();
 		}catch (Exception ex){
-			
+			System.out.println("ex:" + ex);
 		}
 		
 	}

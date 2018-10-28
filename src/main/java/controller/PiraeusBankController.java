@@ -17,6 +17,7 @@ import utils.Utils;
 public class PiraeusBankController {
 
 	public static String piraeusBankPattern ="Ημ/νία Συναλλαγής	Ημ/νία Αξίας	Περιγραφή Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	Προοδευτικό Λογιστικό Υπόλοιπο	";
+	public static String piraeusBankPattern2 ="Ημ/νία Συναλλαγής	Ημ/νία Αξίας	Περιγραφή Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	";
 	public static String accountNumberPattern = "ΠΕΙΡΑΙΩΣ ΑΠΟΔΟΧΩΝ:";
 	
 	static Logger logger = Logger.getLogger(PiraeusBankController.class);
@@ -48,10 +49,10 @@ public class PiraeusBankController {
 							if (strLine.startsWith(accountNumberPattern)) 
 								piraeusAccountNum = Utils.trimText(strLine, accountNumberPattern, Properties.LEFT);
 							
-							if (strLine.equals(piraeusBankPattern))
+							if (strLine.equals(piraeusBankPattern) || strLine.equals(piraeusBankPattern2))
 								startCollectData = true;
 							
-							if (startCollectData && !Properties.tab.equals(strLine) && !strLine.equals(piraeusBankPattern)) {
+							if (startCollectData && !Properties.tab.equals(strLine) && !strLine.equals(piraeusBankPattern) && !strLine.equals(piraeusBankPattern2)) {
 								DataRecord record = new DataRecord(3);
 								String[] element = strLine.split(Properties.tab);
 								record.setAccountNumber(piraeusAccountNum);
@@ -67,6 +68,11 @@ public class PiraeusBankController {
 							}
 						}
 						piraeusBankList.addAll(dataList);
+						if (dataList.size()== 0)
+							logger.info("PiraeusBank's transaction file: " + file.getName() + " return 0 records");
+						
+						//Close the input stream
+						in.close();
 			    		
 			    	}catch (Exception eX) {
 			    		logger.error("PiraeusBankController::", eX);
@@ -74,7 +80,13 @@ public class PiraeusBankController {
 				}
 			}
 			//for debug
-			Utils.printDataRecordList(piraeusBankList);
+			//Utils.printDataRecordList(piraeusBankList);
+			
+			if (piraeusBankList.size()== 0)
+				logger.info("No records added from PiraeusBank's transaction file(s)");
+			else
+				logger.info("Add " +piraeusBankList.size() + " records from PiraeusBank's transaction file(s)");
+			
 		}catch (Exception e) {
 			logger.error("PiraeusBankController::", e);
 		}

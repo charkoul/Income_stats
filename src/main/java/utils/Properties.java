@@ -21,6 +21,7 @@ public class Properties {
 	public static final String backslash = "\\";
 	public static final String slash = "/";
 	public static final String colon = ":";
+	public static final String space = " ";
 	public static final String tab = "\t";
 	
 	//keywords

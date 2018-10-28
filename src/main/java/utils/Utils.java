@@ -15,7 +15,7 @@ import java.util.List;
 
 import org.apache.log4j.Logger;
 
-import obj.Banks;
+import obj.BanksEnum;
 import obj.DataRecord;
 
 
@@ -79,7 +79,7 @@ public class Utils {
 	 public static void printDataRecord(DataRecord record) {
 			
 		logger.info("accountNumber: " + record.getAccountNumber()
-					+ " ,transactionDescription "+ record.getTransactionDescription()
+					+ " ,transactionDescription: "+ record.getTransactionDescription()
 					+ " ,transactionComment: " + record.getTransactionComment() 
 					+ " ,amount: " + record.getAmount()
 					+ " ,transactionNumber: " + record.getTransactionNumber()
@@ -151,6 +151,12 @@ public class Utils {
 			}
 		}
 	  
+		
+		public static java.sql.Timestamp getCurrentTimeStamp() {
+			java.util.Date today = new java.util.Date();
+			return new java.sql.Timestamp(today.getTime());
+
+		}
 	 
 	    
 	    

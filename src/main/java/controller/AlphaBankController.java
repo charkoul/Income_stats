@@ -21,7 +21,7 @@ import utils.Utils;
 public class AlphaBankController {
 	
 	
-	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού;";
+	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού";
 	static Logger logger = Logger.getLogger(AlphaBankController.class);
 	
 	public List<DataRecord> getAlphaBankData() throws Exception {
@@ -47,7 +47,7 @@ public class AlphaBankController {
 						String alphaAccount = "";
 						//get the account number from the first line
 						if ((strLine = br.readLine()) != null){
-							alphaAccount = utils.Utils.trimText(strLine, Properties.colon, Properties.LEFT).replaceAll(" ", "");
+							alphaAccount = utils.Utils.trimText(strLine, Properties.colon, Properties.LEFT).replaceAll(Properties.space, "").replaceAll(Properties.semicolon, "");
 						} 
 						while ((strLine = br.readLine()) != null)   {
 							if (strLine.equals(alphaBankPattern))
@@ -74,8 +74,12 @@ public class AlphaBankController {
 							}
 						}
 						alphaBankList.addAll(dataList);
+						if (dataList.size()== 0)
+							logger.info("AlphaBank's transaction file: " + file.getName() + " return 0 records");
+						
 						//Close the input stream
 						in.close();
+						
 					}catch (Exception e){//Catch exception if any
 						logger.error("AlphaBankControllerException::", e);
 					}
@@ -83,6 +87,10 @@ public class AlphaBankController {
 			}
 			//for debug
 			//Utils.printDataRecordList(alphaBankList);
+			if (alphaBankList.size()== 0)
+				logger.info("No records added from AlphaBank's transaction file(s)");
+			else
+				logger.info("Add " +alphaBankList.size() + " records from AlphaBank's transaction file(s)");
 			
 		}catch(Exception ex){
 			logger.error("AlphaBankControllerException::", ex);

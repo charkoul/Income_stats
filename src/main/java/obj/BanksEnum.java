@@ -1,6 +1,6 @@
 package obj;
 
-public enum Banks {
+public enum BanksEnum {
 	
 	
 	EUROBANK (1),
@@ -11,7 +11,7 @@ public enum Banks {
 	//constructors
 	private final int bankID;
 	
-	Banks(int bankID){
+	BanksEnum(int bankID){
 		this.bankID=bankID;
 	}
 	

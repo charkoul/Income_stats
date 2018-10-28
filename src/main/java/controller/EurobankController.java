@@ -73,6 +73,8 @@ public class EurobankController {
 						//add the erb account----bug
 						addErbAccountToList(dataList ,erbAccount );
 						erbBankList.addAll(dataList);
+						if (dataList.size()== 0)
+							logger.info("Eurobank's transaction file: " + file.getName() + " return 0 records");
 						
 						
 						//Close the input stream
@@ -84,6 +86,11 @@ public class EurobankController {
 			}
 			//for debug
 			//Utils.printDataRecordList(erbBankList);
+			if (erbBankList.size()== 0)
+				logger.info("No records added from Eurobank's transaction file(s)");
+			else
+				logger.info("Add " +erbBankList.size() + " records from Eurobank's transaction file(s)");
+			
 		}catch(Exception ex){
 			logger.error("EurobankControllerException::", ex);
 		}
