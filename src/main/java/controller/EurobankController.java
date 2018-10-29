@@ -11,14 +11,13 @@ import java.util.List;
 import org.apache.log4j.Logger;
 
 import obj.DataRecord;
-import utils.LoggerClass;
 import utils.Properties;
 import utils.Utils;
 
 public class EurobankController {
  
-	public static String eurobankPattern = "Ημερομηνία Κίνησης;Ημερομηνία Αξίας;Περιγραφή;Ποσό;Υπόλοιπο";
-	public static String accountNumberPattern = ";;Αριθμός Λογαριασμού:";
+	public static String eurobankPattern = "\"ΗΜ/ΝΙΑ ΚΙΝΗΣΗΣ\";ΗΜ/ΝΙΑ ΑΞΙΑΣ;ΠΕΡΙΓΡΑΦΗ;ΠΟΣΟ;ΥΠΟΛΟΙΠΟ";
+	public static String accountNumberPattern = "\"\";;ΑΡΙΘΜΟΣ ΛΟΓΑΡΙΑΣΜΟΥ:";
 	static Logger logger = Logger.getLogger(EurobankController.class);
 	
 	public List<DataRecord> getERBData(){
@@ -47,8 +46,8 @@ public class EurobankController {
 						boolean stopRead = false;
 
 						while ((strLine = br.readLine()) != null && !stopRead)   {
-							
-							if (strLine.equals(eurobankPattern ))
+							//compareERB(strLine,eurobankPattern);
+							if (strLine.equals(eurobankPattern))
 								startCollectData = true;
 							
 							//get account number
@@ -59,7 +58,7 @@ public class EurobankController {
 								}
 							}
 							
-							if (!strLine.equals(eurobankPattern) && startCollectData && !stopRead) {
+							if (!strLine.equals(eurobankPattern) && startCollectData && !stopRead && !strLine.equals(Properties.ignore)) {
 								
 								DataRecord record = new DataRecord(1);
 								String[] element = strLine.split(Properties.semicolon);
@@ -107,6 +106,8 @@ public class EurobankController {
 			list.get(i).setAccountNumber(account);
 		}
 	}
+	
+	
 	
 	
 	

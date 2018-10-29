@@ -45,7 +45,7 @@ public class ImportFilesMain {
 			}
 			
 			//for debug
-			Utils.printDataRecordList(transactionList);
+			//Utils.printDataRecordList(transactionList);
 			
 		
 		}catch (Exception ex) {

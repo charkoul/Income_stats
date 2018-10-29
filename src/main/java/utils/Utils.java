@@ -157,6 +157,25 @@ public class Utils {
 			return new java.sql.Timestamp(today.getTime());
 
 		}
+		
+		
+		public void compareERB(String s1, String s2) {
+			char[] str1  = s1.toLowerCase().toCharArray();
+			char[] str2 = s2.toLowerCase().toCharArray();
+			int counter=0;
+			int minLength = Math.min(str1.length, str2.length);
+
+			for(int i = 0; i < minLength; i++)
+			{
+			        if (str1[i] != str2[i])
+			        {
+			           logger.info("str1["+i+"]:"+str1[i]+"|");
+			           logger.info("str2["+i+"]:"+str2[i]+"|");
+			           logger.info("--------");
+			        	counter++;    
+			        }
+			}
+		}
 	 
 	    
 	    

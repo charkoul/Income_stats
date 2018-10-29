@@ -23,6 +23,7 @@ public class Properties {
 	public static final String colon = ":";
 	public static final String space = " ";
 	public static final String tab = "\t";
+	public static final String ignore = "\"\";;;;";
 	
 	//keywords
 	public static String LEFT = "left";
