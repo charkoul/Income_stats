@@ -25,6 +25,7 @@ public class PiraeusBankController {
 	public List<DataRecord> getPiraeusBankData() throws Exception{
 
 		File folder = new File(Properties.rootFolder + Properties.piraeusFolder);
+		logger.info("Read folder = "+Properties.rootFolder + Properties.piraeusFolder );
 		File[] listOfFiles = folder.listFiles();
 		
 		//list for all data per file
@@ -56,11 +57,12 @@ public class PiraeusBankController {
 								DataRecord record = new DataRecord(3);
 								String[] element = strLine.split(Properties.tab);
 								record.setAccountNumber(piraeusAccountNum);
-								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL));
+								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL_DATE_FORMAT));
 								record.setTransactionDescription(element[2].trim());
 								record.setTransactionComment(Utils.trimText(element[3], Properties.slash, Properties.RIGHT));
 								record.setTransactionNumber(Utils.trimText(element[3], Properties.slash, Properties.LEFT));
 								record.setAmount(Double.parseDouble(Utils.changeDemicalSign(removeCurrencyFromText(Properties.EURO,element[4]))));
+								record.setTUN(generateTUNPir(record.getTransactionNumber(), record.getAmount()));
 								dataList.add(record);
 							}
 							if (startCollectData && Properties.tab.equals(strLine)) {
@@ -94,6 +96,22 @@ public class PiraeusBankController {
 	}
 	
 	
+	private String generateTUNPir(String transactionNumber, double amount) {
+		String tunNew = "";
+		try {
+			String amountStr = String.valueOf(amount);
+			amountStr =	utils.Utils.removeCharacter(amountStr, Properties.dot) ;
+			amountStr = utils.Utils.removeCharacter(amountStr, Properties.minus) ;
+			//TUN =TransactionNumber + Amount
+			tunNew = transactionNumber + amountStr;
+			tunNew = utils.Utils.removeCharacter(tunNew, Properties.space);
+		}catch (Exception ex) {
+			logger.error(" generateTUN AlphaBankControllerException::", ex);
+		}
+		return tunNew;
+	}
+
+
 	public static String removeCurrencyFromText(String currency, String fullText ) {
 		fullText = fullText.replace(currency, "");
 		return fullText.trim();

@@ -3,6 +3,7 @@ package jar;
 import controller.DbController;
 import utils.Properties;
 import utils.Utils;
+import java.util.Date;
 
 public class test {
 
@@ -26,7 +27,12 @@ public class test {
 		
 		
 		try {
-			utils.Utils.stringToDate("30/9/2018" , "dd/MM/yyyy");
+			Date datem = utils.Utils.stringToDate("30/9/2018" , "dd/MM/yyyy");
+			String strnew = utils.Utils.dateToString(datem,"dd/MM/yyyy" );
+			System.out.println("strnew:" + strnew );
+			System.out.println("strnew2 ="+ utils.Utils.removeCharacter(strnew, "/"));
+			
+			
 			//DbController.insertRecordIntoTable();
 		}catch (Exception ex){
 			System.out.println("ex:" + ex);

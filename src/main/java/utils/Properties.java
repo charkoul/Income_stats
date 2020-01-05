@@ -8,7 +8,7 @@ public class Properties {
 	public static final String erbFolder = "erb\\";
 	public static final String alphaFolder = "alphabank\\";
 	public static final String piraeusFolder = "piraeusbank\\";
-	public static final String  rootFolder= "C:\\Workspaces\\WebApp\\Income-Stats\\resources\\" ;//"C:\\tmp\\";
+	public static final String  rootFolder= "C:\\Repositories\\Income_stats\\resources\\" ;//"C:\\tmp\\";
 	
 	//Files extensions
 	public static final String htmlExtension = ".html";
@@ -18,11 +18,14 @@ public class Properties {
 	
 	//
 	public static final String semicolon = ";";
+	public static final String dot = ".";
+	public static final String comma = ",";
 	public static final String backslash = "\\";
 	public static final String slash = "/";
 	public static final String colon = ":";
 	public static final String space = " ";
 	public static final String tab = "\t";
+	public static final String minus = "-";
 	public static final String ignore = "\"\";;;;";
 	
 	//keywords
@@ -32,7 +35,7 @@ public class Properties {
 	
 	
 	//Date format strings
-	public static String TYPICAL = "dd/MM/yyyy";
+	public static String TYPICAL_DATE_FORMAT = "dd/MM/yyyy";
 	
 	
 	//encoding

@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -23,6 +24,7 @@ public class EurobankController {
 	public List<DataRecord> getERBData(){
 		
 		File folder = new File(Properties.rootFolder + Properties.erbFolder);
+		logger.info("Read folder = "+Properties.rootFolder + Properties.erbFolder );
 		File[] listOfFiles = folder.listFiles();
 		
 		//list for all data per file
@@ -63,9 +65,10 @@ public class EurobankController {
 								DataRecord record = new DataRecord(1);
 								String[] element = strLine.split(Properties.semicolon);
 								//logger.info("read line :" + strLine );
-								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL));
+								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL_DATE_FORMAT));
 								record.setTransactionDescription(element[2]);
 								record.setAmount(Double.parseDouble(Utils.changeDemicalSign(element[3])));
+								record.setTUN(generateTUNErb(record.getTransactionDate(), record.getAmount() , Double.parseDouble(Utils.changeDemicalSign(element[4]))));
 								dataList.add(record);
 							}
 						}
@@ -96,6 +99,26 @@ public class EurobankController {
 		return erbBankList;
 	}
 	
+	private String generateTUNErb(Date date, double amount, double remainAmount) {
+		String tunNew = "";
+		try {
+			String datetostr = utils.Utils.dateToString(date,"dd/MM/yyyy" );
+			datetostr = utils.Utils.removeCharacter(datetostr, Properties.slash);
+			String amountStr = String.valueOf(amount);
+			amountStr =	utils.Utils.removeCharacter(amountStr, Properties.dot) ;
+			amountStr = utils.Utils.removeCharacter(amountStr, Properties.minus) ;
+			String remainAmountstr = String.valueOf(remainAmount);
+			remainAmountstr =	utils.Utils.removeCharacter(remainAmountstr, Properties.dot) ;
+			remainAmountstr = utils.Utils.removeCharacter(remainAmountstr, Properties.minus) ;
+			//TUN = DATE + amount + remainAmountstr 
+			tunNew = datetostr + amountStr + remainAmountstr;
+			
+		}catch (Exception ex) {
+			logger.error(" generateTUN AlphaBankControllerException::", ex);
+		}
+		return tunNew;
+	}
+
 	public String clearAccount(String account) {
 		account = account.replaceAll(Properties.semicolon, "");
 		return account;

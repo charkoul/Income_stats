@@ -50,17 +50,28 @@ public class Utils {
 		 SimpleDateFormat formater= new SimpleDateFormat(formatStr);
 		 Date date = null;
 		 try {
-			 date = formater.parse(dateStr);
+			date = formater.parse(dateStr);
 	        //System.out.println(date);
-	        //System.out.println(formater.format(date));
-	        return date;
+	       //System.out.println(formater.format(date));
+	      
 	
 	    } catch (ParseException e) {
 	       e.printStackTrace();
-	    }
+	    }finally {
 		 return date;
+	    }
 	
 	}
+	 
+	 public static String dateToString(Date date , String formatStr ) {
+		 String strDate = "";
+		 SimpleDateFormat formater= new SimpleDateFormat(formatStr);
+		 strDate =  formater.format(date);
+		 return strDate;
+	}
+	 
+	 
+	 
 	 
 	 /**
 	  * Change "," from demical(String) to "."
@@ -78,12 +89,14 @@ public class Utils {
 	 
 	 public static void printDataRecord(DataRecord record) {
 			
-		logger.info("accountNumber: " + record.getAccountNumber()
+		logger.debug("accountNumber: " + record.getAccountNumber()
 					+ " ,transactionDescription: "+ record.getTransactionDescription()
 					+ " ,transactionComment: " + record.getTransactionComment() 
 					+ " ,amount: " + record.getAmount()
 					+ " ,transactionNumber: " + record.getTransactionNumber()
-					+ " ,bankID: " + record.getBank());
+					+ " ,bankID: " + record.getBank()
+					+ " ,TransactionDate: " + record.getTransactionDate()
+					+ " ,TUN: " + record.getTUN());
 	}
 		
 		
@@ -175,6 +188,12 @@ public class Utils {
 			        	counter++;    
 			        }
 			}
+		}
+		
+		public static String removeCharacter(String str, String chr) {
+			String strnew = "";
+			strnew = str.replace(chr, "");
+			return strnew;
 		}
 	 
 	    

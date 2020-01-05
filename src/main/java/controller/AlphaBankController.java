@@ -6,6 +6,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
@@ -27,6 +28,8 @@ public class AlphaBankController {
 	public List<DataRecord> getAlphaBankData() throws Exception {
 		
 		File folder = new File(Properties.rootFolder + Properties.alphaFolder);
+		
+		logger.info("Read folder = "+Properties.rootFolder + Properties.alphaFolder );
 		File[] listOfFiles = folder.listFiles();
 		
 		//list for all data per file
@@ -58,9 +61,9 @@ public class AlphaBankController {
 								DataRecord record = new DataRecord(2);
 								String[] element = strLine.split(Properties.semicolon);
 								//logger.info("read line :" + strLine );
-								record.setTransactionDate(Utils.stringToDate(element[1], Properties.TYPICAL));
+								record.setTransactionDate(Utils.stringToDate(element[1], Properties.TYPICAL_DATE_FORMAT));
 								record.setTransactionDescription(cleanDescription(element[2]));
-								record.setTransactionNumber(element[3]);
+								record.setTransactionNumber(element[5]);
 								
 								String amount =  Utils.changeDemicalSign(element[6]);
 								if (element[7].equals(Properties.signExpense)) {
@@ -69,6 +72,7 @@ public class AlphaBankController {
 								record.setAmount(Double.parseDouble(amount));
 								
 								record.setAccountNumber(alphaAccount);
+								record.setTUN(generateTUNAlpha(record.getTransactionNumber(), record.getAmount()));
 								
 								dataList.add(record);
 							}
@@ -94,13 +98,29 @@ public class AlphaBankController {
 			
 		}catch(Exception ex){
 			logger.error("AlphaBankControllerException::", ex);
-			
-			
 		}
 		return alphaBankList;
 	}
 	
 	
+	private String generateTUNAlpha(String transactionNumber, double amount) {
+		String tunNew = "";
+		try {
+			String amountStr = String.valueOf(amount);
+			amountStr =	utils.Utils.removeCharacter(amountStr, Properties.dot) ;
+			amountStr = utils.Utils.removeCharacter(amountStr, Properties.minus) ;
+			//TUN =TransactionNumber + Amount
+			tunNew = transactionNumber + amountStr;
+		}catch (Exception ex) {
+			logger.error(" generateTUN AlphaBankControllerException::", ex);
+		}
+		return tunNew;
+	}
+
+
+	
+
+
 	public String cleanDescription(String text) {
 		if (text != null) {
 			text = text.replaceAll("=\"" , "");
