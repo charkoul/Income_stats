@@ -8,6 +8,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -63,12 +64,30 @@ public class Utils {
 	
 	}
 	 
+	 
+	 
+	 public static java.sql.Date dateToSqlDate(Date date) {
+		 String strDate = "";
+		 java.sql.Date sqlDate = null;
+		 try {
+			 strDate = dateToString(date, Properties.MYSQL_DATE_FORMAT);
+			 SimpleDateFormat format = new SimpleDateFormat(Properties.MYSQL_DATE_FORMAT);
+			 Date parsed = format.parse(strDate);
+			 sqlDate = new java.sql.Date(parsed.getTime());
+		 }catch (Exception e) {
+			 e.printStackTrace();
+		}
+		
+		return sqlDate;
+	}
+	 
 	 public static String dateToString(Date date , String formatStr ) {
 		 String strDate = "";
 		 SimpleDateFormat formater= new SimpleDateFormat(formatStr);
 		 strDate =  formater.format(date);
 		 return strDate;
 	}
+	 
 	 
 	 
 	 

@@ -5,6 +5,7 @@ import controller.EurobankController;
 import controller.PiraeusBankController;
 import obj.DataRecord;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -59,13 +60,34 @@ public class ImportFilesMain {
 						+  (transactionList.size() - transactionListClean.size()) + ". Finally "
 						+ transactionListClean.size() + " records are going to insert.");
 			
-			
-			
-		
+			try {
+				int recordsInsert = insertTransactionListRecords(transactionListClean);
+				logger.info(recordsInsert + " records inserted.");
+			}catch (Exception ex) {
+				logger.error("Exception occured while insert the  Transaction List Records :", ex);
+			}
 		}catch (Exception ex) {
 			logger.error(ex);
 		}
 		LoggerClass.loggerFin();
+	}
+	
+	
+	public static int insertTransactionListRecords(List<DataRecord> transactionListClean) throws SQLException {
+		int results = 0;
+		for (int i=0; i<transactionListClean.size();i++) {
+			results = results + DbController.insertRecordIntoTable(
+										transactionListClean.get(i).getTUN()
+										, transactionListClean.get(i).getBank()
+										, transactionListClean.get(i).getTransactionDate()
+										, transactionListClean.get(i).getTransactionDescription()
+										, transactionListClean.get(i).getTransactionComment()
+										, transactionListClean.get(i).getAmount()
+										, transactionListClean.get(i).getAccountNumber()
+										, transactionListClean.get(i).getTransactionNumber());
+		}
+		
+		return results;
 	}
 	
 	

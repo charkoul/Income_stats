@@ -36,7 +36,7 @@ public class Properties {
 	
 	//Date format strings
 	public static String TYPICAL_DATE_FORMAT = "dd/MM/yyyy";
-	
+	public static String MYSQL_DATE_FORMAT = "yyyy-MM-dd";
 	
 	//encoding
 	public static String UTF8 = "UTF-8";
