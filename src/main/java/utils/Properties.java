@@ -46,5 +46,8 @@ public class Properties {
 	//currency
 	public static String EURO = "EUR";
 	
+	//Pattenrs
+	public static int PATTERN_ONE = 1;
+	public static int PATTERN_TWO = 2;
 	
 }

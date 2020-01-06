@@ -18,6 +18,7 @@ public class PiraeusBankController {
 
 	public static String piraeusBankPattern ="Ημ/νία Συναλλαγής	Ημ/νία Αξίας	Περιγραφή Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	Προοδευτικό Λογιστικό Υπόλοιπο	";
 	public static String piraeusBankPattern2 ="Ημ/νία Συναλλαγής	Ημ/νία Αξίας	Περιγραφή Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	";
+	public static String piraeusBankPattern3 ="Κατηγορία	Περιγραφή Συναλλαγής	Ημ/νία Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	";
 	public static String accountNumberPattern = "ΠΕΙΡΑΙΩΣ ΑΠΟΔΟΧΩΝ:";
 	
 	static Logger logger = Logger.getLogger(PiraeusBankController.class);
@@ -44,27 +45,27 @@ public class PiraeusBankController {
 						boolean startCollectData = false;
 						String piraeusAccountNum = "";
 						boolean stopProcess = false; 
+						int patternFunction = 0;
 						
 						while ((strLine = br.readLine()) != null && !stopProcess)   {
 							
 							if (strLine.startsWith(accountNumberPattern)) 
 								piraeusAccountNum = Utils.trimText(strLine, accountNumberPattern, Properties.LEFT);
 							
-							if (strLine.equals(piraeusBankPattern) || strLine.equals(piraeusBankPattern2))
+							if (strLine.equals(piraeusBankPattern) || strLine.equals(piraeusBankPattern2)) {
 								startCollectData = true;
-							
-							if (startCollectData && !Properties.tab.equals(strLine) && !strLine.equals(piraeusBankPattern) && !strLine.equals(piraeusBankPattern2)) {
-								DataRecord record = new DataRecord(3);
-								String[] element = strLine.split(Properties.tab);
-								record.setAccountNumber(piraeusAccountNum);
-								record.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL_DATE_FORMAT));
-								record.setTransactionDescription(element[2].trim());
-								record.setTransactionComment(Utils.trimText(element[3], Properties.slash, Properties.RIGHT));
-								record.setTransactionNumber(Utils.trimText(element[3], Properties.slash, Properties.LEFT));
-								record.setAmount(Double.parseDouble(Utils.changeDemicalSign(removeCurrencyFromText(Properties.EURO,element[4]))));
-								record.setTUN(generateTUNPir(record.getTransactionNumber(), record.getAmount()));
-								dataList.add(record);
+								patternFunction = Properties.PATTERN_ONE;
 							}
+							
+							if (startCollectData && !Properties.tab.equals(strLine) && lineNotPatternLine(strLine) ) {
+								if (patternFunction == Properties.PATTERN_ONE) {
+									DataRecord record = new DataRecord(3);
+									record = fillDataRecordForPatternOne(strLine, piraeusAccountNum, record);
+									dataList.add(record);
+								}
+							}
+							
+							
 							if (startCollectData && Properties.tab.equals(strLine)) {
 								stopProcess=true;
 							}
@@ -94,7 +95,7 @@ public class PiraeusBankController {
 	}
 	
 	
-	private String generateTUNPir(String transactionNumber, double amount) {
+	private static String generateTUNPir(String transactionNumber, double amount) {
 		String tunNew = "";
 		try {
 			String amountStr = String.valueOf(amount);
@@ -104,7 +105,7 @@ public class PiraeusBankController {
 			tunNew = transactionNumber + amountStr;
 			tunNew = utils.Utils.removeCharacter(tunNew, Properties.space);
 		}catch (Exception ex) {
-			logger.error(" generateTUN AlphaBankControllerException::", ex);
+			logger.error(" generateTUN PiraeusBankController::", ex);
 		}
 		return tunNew;
 	}
@@ -115,6 +116,32 @@ public class PiraeusBankController {
 		return fullText.trim();
 	}
 	
+	
+	public static boolean lineNotPatternLine(String line) {
+		boolean result = false;
+		//if (!line.equals(piraeusBankPattern) && !line.equals(piraeusBankPattern2) && !line.equals(piraeusBankPattern3))
+		if (!line.equals(piraeusBankPattern) && !line.equals(piraeusBankPattern2))
+			result = true;
+		return result;
+	}
+	
+	public static DataRecord fillDataRecordForPatternOne(String line, String accountNum, DataRecord rec ) throws Exception  {
+		String[] element = line.split(Properties.tab);
+		try {
+			rec.setAccountNumber(accountNum);
+			rec.setTransactionDate(Utils.stringToDate(element[0], Properties.TYPICAL_DATE_FORMAT));
+			rec.setTransactionDescription(element[2].trim());
+			rec.setTransactionComment(Utils.trimText(element[3], Properties.slash, Properties.RIGHT));
+			rec.setTransactionNumber(Utils.trimText(element[3], Properties.slash, Properties.LEFT));
+			rec.setAmount(Double.parseDouble(Utils.changeDemicalSign(removeCurrencyFromText(Properties.EURO,element[4]))));
+			rec.setTUN(generateTUNPir(rec.getTransactionNumber(), rec.getAmount()));
+		}catch (Exception e) {
+			logger.error(" fillDataRecordForPatternOne::", e);
+		}finally {
+			return rec;
+		}
+	}
+		
 	
 	
 	
