@@ -19,6 +19,7 @@ public class PiraeusBankController {
 	public static String piraeusBankPattern ="Ημ/νία Συναλλαγής	Ημ/νία Αξίας	Περιγραφή Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	Προοδευτικό Λογιστικό Υπόλοιπο	";
 	public static String piraeusBankPattern2 ="Ημ/νία Συναλλαγής	Ημ/νία Αξίας	Περιγραφή Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	";
 	public static String piraeusBankPattern3 ="Κατηγορία	Περιγραφή Συναλλαγής	Ημ/νία Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	";
+	public static String piraeusBankPattern4 ="Κατηγορία	Περιγραφή Συναλλαγής	Ημ/νία Συναλλαγής	Σχόλια / Κωδικός Αναφοράς	Ποσό	Προοδευτικό Λογιστικό Υπόλοιπο	";
 	public static String accountNumberPattern = "ΠΕΙΡΑΙΩΣ ΑΠΟΔΟΧΩΝ:";
 	
 	static Logger logger = Logger.getLogger(PiraeusBankController.class);
@@ -55,12 +56,20 @@ public class PiraeusBankController {
 							if (strLine.equals(piraeusBankPattern) || strLine.equals(piraeusBankPattern2)) {
 								startCollectData = true;
 								patternFunction = Properties.PATTERN_ONE;
+							}else if (strLine.equals(piraeusBankPattern3) || strLine.equals(piraeusBankPattern4)) {
+								startCollectData = true;
+								patternFunction = Properties.PATTERN_TWO;
 							}
 							
 							if (startCollectData && !Properties.tab.equals(strLine) && lineNotPatternLine(strLine) ) {
 								if (patternFunction == Properties.PATTERN_ONE) {
 									DataRecord record = new DataRecord(3);
 									record = fillDataRecordForPatternOne(strLine, piraeusAccountNum, record);
+									dataList.add(record);
+								}
+								if (patternFunction == Properties.PATTERN_TWO) {
+									DataRecord record = new DataRecord(3);
+									record = fillDataRecordForPatternTwo(strLine, piraeusAccountNum, record);
 									dataList.add(record);
 								}
 							}
@@ -119,8 +128,7 @@ public class PiraeusBankController {
 	
 	public static boolean lineNotPatternLine(String line) {
 		boolean result = false;
-		//if (!line.equals(piraeusBankPattern) && !line.equals(piraeusBankPattern2) && !line.equals(piraeusBankPattern3))
-		if (!line.equals(piraeusBankPattern) && !line.equals(piraeusBankPattern2))
+		if (!line.equals(piraeusBankPattern) && !line.equals(piraeusBankPattern2) && !line.equals(piraeusBankPattern3) && !line.equals(piraeusBankPattern4))
 			result = true;
 		return result;
 	}
@@ -141,6 +149,25 @@ public class PiraeusBankController {
 			return rec;
 		}
 	}
+	
+	private DataRecord fillDataRecordForPatternTwo(String line, String accountNum, DataRecord rec) throws Exception   {
+		String[] element = line.split(Properties.tab);
+		try {
+			rec.setAccountNumber(accountNum);
+			rec.setTransactionDescription(element[1].trim());
+			rec.setTransactionDate(Utils.stringToDate(element[2], Properties.TYPICAL_DATE_FORMAT));
+			rec.setTransactionComment(Utils.trimText(element[3], Properties.slash, Properties.RIGHT));
+			rec.setTransactionNumber(Utils.trimText(element[3], Properties.slash, Properties.LEFT));
+			rec.setAmount(Double.parseDouble(Utils.changeDemicalSign(removeCurrencyFromText(Properties.EURO,element[4]))));
+			rec.setTUN(generateTUNPir(rec.getTransactionNumber(), rec.getAmount()));
+		}catch (Exception e) {
+			logger.error(" fillDataRecordForPatternTwo::", e);
+		}finally {
+			return rec;
+		}
+	}
+
+
 		
 	
 	

@@ -61,8 +61,8 @@ public class ImportFilesMain {
 						+ transactionListClean.size() + " records are going to insert.");
 			
 			try {
-				//int recordsInsert = insertTransactionListRecords(transactionListClean);
-				//logger.info(recordsInsert + " records inserted.");
+				int recordsInsert = insertTransactionListRecords(transactionListClean);
+				logger.info(recordsInsert + " records inserted.");
 			}catch (Exception ex) {
 				logger.error("Exception occured while insert the  Transaction List Records :", ex);
 			}
