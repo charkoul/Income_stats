@@ -1,0 +1,8 @@
+SELECT BANK, MONTH(transactiondate) `MONTH`, 
+       YEAR(transactiondate) `YEAR`,
+        SUM(CASE when amount >=0 then amount END) INCOME ,
+		ABS(SUM(CASE when amount <0 then amount END)) EXPENSES ,
+      
+      ABS( SUM(amount)) Total_Amount      
+FROM transactionshistory
+GROUP BY MONTH(transactiondate), YEAR(transactiondate) , BANK order by MONTH desc
