@@ -1,0 +1,5 @@
+CREATE TABLE `bank` (
+  `ID` int(11) NOT NULL,
+  `BANKNAME` varchar(45) NOT NULL,
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=greek

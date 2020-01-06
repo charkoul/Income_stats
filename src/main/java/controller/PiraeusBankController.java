@@ -70,9 +70,7 @@ public class PiraeusBankController {
 							}
 						}
 						piraeusBankList.addAll(dataList);
-						if (dataList.size()== 0)
-							logger.info("PiraeusBank's transaction file: " + file.getName() + " return 0 records");
-						
+						logger.info("PiraeusBank's transaction file: " + file.getName() + " return " + dataList.size() + " records");
 						//Close the input stream
 						in.close();
 			    		
@@ -87,7 +85,7 @@ public class PiraeusBankController {
 			if (piraeusBankList.size()== 0)
 				logger.info("No records added from PiraeusBank's transaction file(s)");
 			else
-				logger.info("Add " +piraeusBankList.size() + " records from PiraeusBank's transaction file(s)");
+				logger.info("Add " +piraeusBankList.size() + " (total) records from PiraeusBank's transaction file(s)");
 			
 		}catch (Exception e) {
 			logger.error("PiraeusBankController::", e);
@@ -116,6 +114,8 @@ public class PiraeusBankController {
 		fullText = fullText.replace(currency, "");
 		return fullText.trim();
 	}
+	
+	
 	
 	
 }

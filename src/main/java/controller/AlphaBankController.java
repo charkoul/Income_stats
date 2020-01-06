@@ -22,7 +22,8 @@ import utils.Utils;
 public class AlphaBankController {
 	
 	
-	public static  String alphaBankPattern ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού";
+	public static  String alphaBankPattern  ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού";
+	public static  String alphaBankPattern2 ="Α/Α;Ημ/νία;Αιτιολογία;Κατάστημα;Τοκισμός από;Αρ. συναλλαγής;Ποσό;Πρόσημο ποσού;";
 	static Logger logger = Logger.getLogger(AlphaBankController.class);
 	
 	public List<DataRecord> getAlphaBankData() throws Exception {
@@ -53,10 +54,10 @@ public class AlphaBankController {
 							alphaAccount = utils.Utils.trimText(strLine, Properties.colon, Properties.LEFT).replaceAll(Properties.space, "").replaceAll(Properties.semicolon, "");
 						} 
 						while ((strLine = br.readLine()) != null)   {
-							if (strLine.equals(alphaBankPattern))
+							if (strLine.equals(alphaBankPattern) || strLine.equals(alphaBankPattern2))
 								startCollectData = true;
 							
-							if (!strLine.equals(alphaBankPattern) && startCollectData) {
+							if ((!strLine.equals(alphaBankPattern) && !strLine.equals(alphaBankPattern2)) && startCollectData) {
 								
 								DataRecord record = new DataRecord(2);
 								String[] element = strLine.split(Properties.semicolon);
@@ -78,9 +79,7 @@ public class AlphaBankController {
 							}
 						}
 						alphaBankList.addAll(dataList);
-						if (dataList.size()== 0)
-							logger.info("AlphaBank's transaction file: " + file.getName() + " return 0 records");
-						
+						logger.info("AlphaBank's transaction file: " + file.getName() + " return " + dataList.size() +" records.");
 						//Close the input stream
 						in.close();
 						
@@ -94,7 +93,7 @@ public class AlphaBankController {
 			if (alphaBankList.size()== 0)
 				logger.info("No records added from AlphaBank's transaction file(s)");
 			else
-				logger.info("Add " +alphaBankList.size() + " records from AlphaBank's transaction file(s)");
+				logger.info("Add " +alphaBankList.size() + " (total) records from AlphaBank's transaction file(s)");
 			
 		}catch(Exception ex){
 			logger.error("AlphaBankControllerException::", ex);
